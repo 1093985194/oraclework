@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}" rel="stylesheet">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>chal</title>
+    <style>
+        .middle{
+            padding-top: 100px;
+        }
+        .fontcolor{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container row">
+    <div class="container middle">
+        <div class="row" >
+            <div class="col-md-5 col-md-offset-3">
+                <div class="card p-4">
+                    <div class="form-group">
+                        <div class="card-header text-center text-uppercase h4 font-weight-light fontcolor">
+                            商品信息查询
+                        </div>
+                    </div>
+                    <div class="card-body py-5">
+                        <div class="form-group">
+                            <label class="form-control-label">商品ID</label>
+                            <input type="text" class="form-control" name="cid" readonly="readonly" th:field="${good.gid}" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">商品姓名</label>
+                            <input type="text" class="form-control" name="cname" readonly="readonly" th:field="${good.gname}" />
+                        </div>
+
+                        <form th:action="@{/goods/list}" method="post">
+                            <div class="card-footer fontcolor">
+                                <div class="row ">
+                                    <div class="col-6 col-md-offset-4 ">
+                                        <input type="submit" class="btn btn-primary px-5" value="返回主页" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
